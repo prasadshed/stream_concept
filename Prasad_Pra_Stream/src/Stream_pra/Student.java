@@ -77,4 +77,11 @@ public class Student {
 		this.city = city;
 	}
 
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", lname=" + lname + ", age=" + age + ", gender=" + gender + ", dept=" + dept
+				+ ", year=" + year + ", city=" + city + "]";
+	}
+	
+
 }
