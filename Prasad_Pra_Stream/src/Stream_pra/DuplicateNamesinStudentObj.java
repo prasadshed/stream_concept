@@ -18,8 +18,11 @@ public class DuplicateNamesinStudentObj {
         );
 		List<String> res=students.stream().collect(Collectors.groupingBy(e->e.getName(),Collectors.counting())).entrySet().stream().filter(s->s.getValue()>1).map(Map.Entry::getKey).collect(Collectors.toList());
 		System.out.println(res);
-		Map<String, Long> keyval=students.stream().collect(Collectors.groupingBy(e->e.getName(),Collectors.counting()));
+		Map<String, Long> keyval=students.stream().map(Student::getName).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 		System.out.println(keyval);
+		Map<String, Long> kv=students.stream().map(Student::getDept).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+		//kv.forEach(((t, u) -> System.out.println(t+u)));
+		System.out.println(kv);
 	}
 
 }
