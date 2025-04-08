@@ -2,6 +2,8 @@ package Stream_pra;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class EmployeeFilter {
@@ -17,6 +19,8 @@ public class EmployeeFilter {
 				new Employee(2128925,"Prasad",30956.78));
 		List<Employee>lsemp=list.stream().sorted((o1, o2) -> o1.getSalary()>o2.getSalary()?-1:o1.getSalary()<o2.getSalary()?1:0).collect(Collectors.toList());
 		System.out.println(lsemp);
+		Map<String,Long> kv=list.stream().map(Employee::getEmpName).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+		System.out.println(kv);
 	}
 
 }
