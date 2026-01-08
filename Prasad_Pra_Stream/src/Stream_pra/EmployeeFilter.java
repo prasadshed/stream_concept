@@ -21,6 +21,8 @@ public class EmployeeFilter {
 		System.out.println(lsemp);
 		Map<String,Long> kv=list.stream().map(Employee::getEmpName).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 		System.out.println(kv);
+		double avg=list.stream().mapToDouble(value -> value.getSalary()).average().orElse(0.0);
+		System.out.println(avg);
 	}
 
 }
