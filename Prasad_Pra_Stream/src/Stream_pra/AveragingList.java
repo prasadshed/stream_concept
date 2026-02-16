@@ -10,7 +10,7 @@ public class AveragingList {
 		List<Integer> list=Arrays.asList(12,23,45,67);
 		double avg=list.stream().mapToDouble(Integer::doubleValue).average().orElse(0.0);
 		System.out.println(avg);
-		System.out.println(list);
+		System.out.println(list);///printing statement
 	}
 
 }
