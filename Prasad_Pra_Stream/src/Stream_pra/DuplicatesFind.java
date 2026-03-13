@@ -23,7 +23,7 @@ public class DuplicatesFind {
 		items.stream().collect(Collectors.groupingBy(e->e,Collectors.counting()))
 		.entrySet().stream().filter(entry->entry.getValue()>1).map(Map.Entry::getKey).collect(Collectors.toSet());
 		System.out.println(dupli);
-		
+		System.out.println("Prasad");
 		
 		items.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().stream().filter(s->s.getValue()>1).map(Map.Entry::getKey).forEach(System.out::println);
 	}
